@@ -29,7 +29,11 @@ const createWorkspace = () => {
    <input type="text" v-model="newWorkspaceName" placeholder="Type in Workspace Name...">
    <button type="submit">Create a new workspace</button>
    <ul>
-    <li v-for="workspace in workspaceList" :key="workspace.id">{{workspace.id}} : {{workspace.name}}</li>
+
+    <li v-for="workspace in workspaceList" :key="workspace.id">
+     <nuxt-link :to=" `/workspace/${workspace.id}`">{{ workspace.id }} : {{workspace.name}}</nuxt-link>
+    </li>
+
    </ul>
   </form>
  </div>
