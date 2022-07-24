@@ -1,12 +1,9 @@
 <script setup>
+
+
+
 const newWorkspaceName = ref('')
-const workspaceList = ref([{
- id:1,
- name : 'pineapple'
-}, {
-  id: 2,
-  name: 'berry'
- }])
+const workspaceList = useWorkspaceList()
 const createWorkspace = () => {
  const randomId = Math.floor(Math.random() * 100);
  const workspaceName = newWorkspaceName;
@@ -33,7 +30,7 @@ const createWorkspace = () => {
    <button type="submit">Create a new workspace</button>
    <ul>
     <li v-for="workspace in workspaceList" :key="workspace.id">{{workspace.id}} : {{workspace.name}}</li>
-    </ul>
+   </ul>
   </form>
  </div>
 </template>
