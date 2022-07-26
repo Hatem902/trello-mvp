@@ -1,13 +1,10 @@
 <script setup>
-const idParam = useRoute().params.id
-
+const idParam = useRoute().params.id;
+const workspace = useWorkspaceList().value.find((ws) => ws.id === idParam);
 </script>
 
 <template>
- <div>
-<h1>{{idParam}}</h1>
- </div>
+  <div>
+    <h1>{{ workspace }} Workspace</h1>
+  </div>
 </template>
-
-
-
